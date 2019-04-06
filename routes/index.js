@@ -50,4 +50,13 @@ router.get('/responder', function(req, res, next) {
   res.render('pesquisa');
 });
 
+router.get('/respostas', function(req, res) {
+  db.findAll((e, docs) => {
+    if(e) {
+      return console.log(e);
+    }
+    return res.json(docs);
+  });
+})
+
 module.exports = router;
