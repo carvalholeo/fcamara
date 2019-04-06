@@ -8,11 +8,14 @@
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "dotenv": "^7.0.0",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
     "firebase": "^5.9.3",
     "firebase-admin": "^7.2.0",
     "http-errors": "~1.6.2",
-    "morgan": "~1.9.0"
+    "mongodb": "^3.2.3",
+    "morgan": "~1.9.0",
+    "nodemailer": "^6.1.0"
   }
 }

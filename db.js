@@ -1,23 +1,19 @@
-var firebase = require("firebase");
+var mongoClient = require("mongodb").MongoClient;
 
-var config = {
-    apiKey: "AIzaSyCCvXS9LoTK-JwsJV642ukwr4xl-Hc1vY8",
-    authDomain: "pesquisa-satisfacao-hospital.firebaseapp.com",
-    databaseURL: "https://pesquisa-satisfacao-hospital.firebaseio.com",
-    projectId: "pesquisa-satisfacao-hospital",
-    storageBucket: "pesquisa-satisfacao-hospital.appspot.com",
-    messagingSenderId: "292576238730"
-  };
-var admin = require("firebase-admin");
-var serviceAccount = require("./serviceAccountKey.json");
+mongoClient.connect("mongodb://localhost:27017/pesquisa")
+    .then(conn => global.conn = conn.db("pesquisa"))
+    .catch(err => console.log(err));
 
+function findAll(callback) {
+    global.conn.collection("respostas").find({}).toArray(callback);
+}
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://pesquisa-satisfacao-hospital.firebaseio.com"
-});
-firebase.initializeApp(config);
+function insert(resposta, callback) {
+    global.conn.collection("respostas").insertOne(resposta, callback);
+}
 
-var db = firebase.database();
+function findOne(id, callback) {
+    global.conn.collection("respostas").findOne({_id: new ObjectId(id)}, callback);
+}
 
-module.exports = "db";
+module.exports = { findAll, insert, findOne };
