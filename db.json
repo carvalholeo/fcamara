@@ -1,0 +1,34 @@
+{
+    "Users":{
+        "CPF0":{
+            "Name":"Jhon"
+        }
+    },
+    "perguntas":[
+        "Limpeza e condições das instalações físicas e pessoais",
+        "Disponibilidade, educação, respeito e presteza no atendimento da equipe com o paciente",
+        "Horários reservados para as necessidades do paciente (alimentação, higiene, medicação, etc)",
+        "Tempo de duração e freqüência dos atendimentos realizados pela equipe do hospital",
+        "Tempo de duração e freqüência das visitas pessoais",
+        "Explicação, pelo médico, sobre a doença, tratamento que será realizado, efeitos colaterais e riscos",
+        "Qualidade das refeições servidas",
+        "Qualidade do tratamento médico pela equipe",
+        "Avaliação geral do atendimento do hospital",
+        "Observações (Críticas, elogios e sugestões)"
+    ],
+    "respostas": {
+        "CPF0":[
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5"
+        ]
+
+    }
+}
